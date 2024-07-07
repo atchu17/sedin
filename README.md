@@ -6,11 +6,11 @@ This repository contains models for detecting harmful or offensive content in Ta
 
 The repository is organized as follows:
 
-1. `tamil.ipynb`: Detects offensive words in Tamil and Tanglish using DistilBERT.
+1. `tamil_offensive/notoffensive.ipynb`: Detects offensive words in Tamil and Tanglish using DistilBERT.
 2. `malayalam.ipynb`: Detects offensive words in Malayalam and Manglish using DistilBERT.
 3. `kannada.ipynb`: Detects offensive words in Kannada and Kanglish using DistilBERT.
 4. `english.ipynb`: Detects offensive words in English using DistilBERT.
-5. `language_classification.py`: Classifies the language of the input text using spaCy. It handles romanized Tanglish, Manglish, and Kanglish words and uses Unicode for Tamil, Kannada, and English to find the perfect words. After predicting the language, the sentence is sent to the respective DistilBERT model saved from the above notebooks.
+5. `language_classification_and_offensivedetection.py`: Classifies the language of the input text using spaCy. It handles romanized Tanglish, Manglish, and Kanglish words and uses Unicode for Tamil, Kannada, and English to find the perfect words. After predicting the language, the sentence is sent to the respective DistilBERT model saved from the above notebooks.
 
 ## Dataset
 
@@ -31,6 +31,9 @@ Additionally, you need to download the spaCy language models:
 
 ```bash
 python -m spacy download en_core_web_sm
+python install torch transformers datasets pandas scikit-learn
+python install transformers[torch]
+python install accelerate -U
 ```
 
 ## Usage
@@ -44,7 +47,7 @@ You can run the individual Jupyter notebooks (`tamil.ipynb`, `malayalam.ipynb`, 
 The `language_classification.py` file contains the code for classifying the language of an input sentence and sending it to the respective DistilBERT model for offensive content detection. You can run this script as follows:
 
 ```bash
-python language_classification.py
+python language_classification_and_offensivedetection.py
 ```
 
 ## Model Training
