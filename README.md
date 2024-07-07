@@ -25,15 +25,16 @@ To use the models, you need to install the necessary libraries. You can do this 
 
 ```bash
 pip install transformers spacy
+pip install torch transformers datasets pandas scikit-learn
+pip install transformers[torch]
+pip install accelerate -U
 ```
 
 Additionally, you need to download the spaCy language models:
 
 ```bash
 python -m spacy download en_core_web_sm
-python install torch transformers datasets pandas scikit-learn
-python install transformers[torch]
-python install accelerate -U
+
 ```
 
 ## Usage
