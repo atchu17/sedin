@@ -45,7 +45,8 @@ You can run the individual Jupyter notebooks (`tamil.ipynb`, `malayalam.ipynb`, 
 
 ### Language Classification
 
-The `language_classification.py` file contains the code for classifying the language of an input sentence and sending it to the respective DistilBERT model for offensive content detection. You can run this script as follows:
+The `language_classification.py` file contains the code for classifying the language of an input sentence and sending it to the respective DistilBERT model for offensive content detection. check and change the path for different models accordingly
+. You can run this script as follows:
 
 ```bash
 python language_classification_and_offensive_detection.py
